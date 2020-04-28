@@ -1,0 +1,14 @@
+version: '2.4'
+services:
+  web:
+    image: 'nginx:latest'
+    restart: always
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./html:/var/www/html
+    ports:
+      - '8080:80'
+
+#volumes:
+networks:
+  net:
